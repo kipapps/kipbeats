@@ -52,7 +52,6 @@
 		"frc/batcache"
 	  ],
 	  "web/app/mu-plugins/{$name}/": [
-		"wpackagist-plugin/wordfence",
 		"wpackagist-plugin/nginx-helper",
 		"wpackagist-plugin/sendgrid-email-delivery-simplified",
 		"humanmade/s3-uploads"
