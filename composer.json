@@ -55,6 +55,7 @@
 		"wpackagist-plugin/nginx-helper",
 		"wpackagist-plugin/sendgrid-email-delivery-simplified",
         "wpackagist-plugin/elementor",
+        "wpackagist-plugin/kirki",
 		"humanmade/s3-uploads"
 	  ],
 	  "web/app/plugins/{$name}/": [
