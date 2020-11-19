@@ -54,6 +54,7 @@
 	  "web/app/mu-plugins/{$name}/": [
 		"wpackagist-plugin/nginx-helper",
 		"wpackagist-plugin/sendgrid-email-delivery-simplified",
+        "wpackagist-plugin/elementor",
 		"humanmade/s3-uploads"
 	  ],
 	  "web/app/plugins/{$name}/": [
