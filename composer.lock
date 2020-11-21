@@ -3828,11 +3828,11 @@
         },
         {
             "name": "wpackagist-plugin/external-media",
-            "version": "2.5",
+            "version": "1.0.27",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/external-media/",
-                "reference": "tags/2.5"
+                "reference": "tags/1.0.27"
             },
             "dist": {
                 "type": "zip",
