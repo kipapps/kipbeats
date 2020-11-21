@@ -52,12 +52,12 @@
 		"frc/batcache"
 	  ],
 	  "web/app/mu-plugins/{$name}/": [
-		"wpackagist-plugin/nginx-helper",
+		
 		"wpackagist-plugin/sendgrid-email-delivery-simplified",
         "wpackagist-plugin/elementor",
         "wpackagist-plugin/kirki",
-        "wpackagist-plugin/external-media",
-		"humanmade/s3-uploads"
+        "wpackagist-plugin/external-media"
+		
 	  ],
 	  "web/app/plugins/{$name}/": [
 		"wpackagist-plugin/all-in-one-seo-pack",
