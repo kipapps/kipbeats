@@ -68,7 +68,7 @@ final class KipBeats {
 		//include_once( 'includes/session.php' );
 
 		if ( $this->is_request( 'admin' ) ) {
-			//include_once( 'includes/admin/class-admin.php' );
+			include_once( 'includes/base64-img-box.php' );
             include_once( 'includes/paypal-button.php' );
 		}
 
