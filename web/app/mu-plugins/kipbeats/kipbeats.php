@@ -68,16 +68,19 @@ final class KipBeats {
 		//include_once( 'includes/session.php' );
 
 		if ( $this->is_request( 'admin' ) ) {
-			include_once( 'includes/base64-img-box.php' );
+			include_once( 'includes/base64.php' );
+            //include_once( 'includes/media-hooks.php' );
             include_once( 'includes/paypal-button.php' );
 		}
 
 		if ( $this->is_request( 'ajax' ) ) {
 			//$this->ajax_includes();
+            include_once( 'includes/ajax/main.php' );
 		}
 
 		if ( $this->is_request( 'frontend' ) ) {
 			//$this->frontend_includes();
+            include_once( 'includes/base64-front.php' );
 		}
 
 		if ( $this->is_request( 'cron' ) && 'yes' === get_option( 'kipbeats_allow_tracking', 'no' ) ) {
@@ -164,8 +167,10 @@ final class KipBeats {
 	}
     
     public function icon_url() {return plugins_url( '/', __FILE__ ).'assets/images/icon.png';}
-	public function plugin_url() {return plugins_url( '/', __FILE__ );}
-	public function plugin_path() {return untrailingslashit( plugin_dir_path( __FILE__ ) ).'/';}
+	public function plugin_url($f='') {return plugins_url( '/', __FILE__ ).$f;}
+	public function plugin_path($f='') {return untrailingslashit( plugin_dir_path( __FILE__ ) ).'/';}
+    public function plugin_js_path($f='') {return  plugins_url('/', __FILE__ ) .'assets/js/'.$f;}
+    public function plugin_ajax_path($f='') {return  plugins_url('/', __FILE__ ) .'includes/ajax/'.$f;}
     public function template_path() {return apply_filters( 'estimategadget_template_path', 'estimategadget/' );}
     
     public function get_paypal_button($id) {return get_paypal_button($id);}
