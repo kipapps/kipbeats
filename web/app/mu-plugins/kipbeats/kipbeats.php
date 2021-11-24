@@ -62,7 +62,7 @@ final class KipBeats {
     public function includes() {
 		//include_once( 'includes/class-autoloader.php' );
 		include_once( 'includes/core-functions.php' );
-		//include_once( 'includes/eg-widget-functions.php' );
+		//include_once( 'elementor-widgets/oembed.php' );
 		//include_once( 'includes/class-install.php' );
         //include_once( 'includes/class-global.php' ); 
 		//include_once( 'includes/session.php' );
@@ -108,8 +108,23 @@ final class KipBeats {
 		//add_action( 'init', array( 'KB_Emails', 'init_transactional_emails' ) );
         add_action( 'admin_menu', array( $this, 'kipbeats_add_plugin_page' ) );
 		add_action( 'admin_init', array( $this, 'kipbeats_page_init' ) );
+        if ( did_action( 'elementor/loaded' ) ) {
+			add_action( 'elementor/init', [ $this, 'e_init' ] );
+		}
 	}
-   
+    public function e_init() {
+        load_plugin_textdomain( 'elementor-test-extension' );
+        add_action( 'elementor/widgets/widgets_registered', [ $this, 'init_widgets' ] );
+    }
+    public function init_widgets() {
+
+		// Include Widget files
+		require_once( __DIR__ . '/e-widgets/button-list.php' );
+
+		// Register widget
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Widget_Button_List() );
+
+	}
 	public static function before_init() {
 		global $wp;
 		//if dependent plugin is not active
